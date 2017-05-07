@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/oauthserver
+    username: oauthserver
+    password: password
+    # Poor man's migrations
+    continue-on-error: true
+  jpa:
+    generate-ddl: false
+
+logging:
+  level:
+#    org.springframework.web: DEBUG

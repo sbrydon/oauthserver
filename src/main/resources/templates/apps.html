@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Apps</h1>
+<p>
+    Each 'app' has the 'client_credentials' OAuth grant type. Use your provided Client ID and Secret to get a token:
+</p>
+<p>
+    <i>
+        curl --request POST
+        --url http://client_id:secret@host:port/oauth/token
+        --header 'content-type: application/x-www-form-urlencoded'
+        --data grant_type=client_credentials
+    </i>
+</p>
+<p>
+    <a th:href="@{/apps/add}">Add an app</a>
+</p>
+<table>
+    <tr>
+        <th>App</th>
+        <th>Client ID</th>
+    </tr>
+    <th:block th:each="app : ${apps}">
+        <tr>
+            <td th:text="${app.name}"></td>
+            <td th:text="${app.oauthClientDetailsId}"></td>
+        </tr>
+    </th:block>
+</table>
+<br/>
+<form th:action="@{/logout}" method="POST">
+    <button type="submit">Logout</button>
+</form>
+</body>
+</html>
