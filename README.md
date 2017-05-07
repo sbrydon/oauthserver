@@ -1,6 +1,6 @@
 # oauthserver
 
-OAuth (client_credentials) server built with Spring Boot
+OAuth server built with Spring Boot
 
 * `spring-boot-starter-security` for registering and logging in
 
